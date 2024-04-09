@@ -1,0 +1,56 @@
+[
+    {
+        "email": "pavan@gmail.com",
+        "name": "Pavan Kumar",
+        "password": "12345",
+        "confirm_password": "12345",
+        "age": "24",
+        "edu": "M.Tech",
+        "pro": "on",
+        "Description": "hello"
+    },
+    {
+        "email": "pavan123@gmail.com",
+        "name": "Pavan",
+        "password": "12345",
+        "confirm_password": "12345",
+        "age": "24",
+        "edu": "M.Tech",
+        "pro": "on",
+        "Description": "hello",
+        "Fileupload": "C:\\fakepath\\Pavan.png"
+    },
+    {
+        "email": "pavan123@gmail.com",
+        "name": "Pavan",
+        "password": "12345",
+        "confirm_password": "123456789",
+        "age": "24",
+        "edu": "M.Tech",
+        "pro": "on",
+        "Description": "hello",
+        "Fileupload": "C:\\fakepath\\Pavan.png"
+    },
+    {
+        "email": "pavan123@gmail.com",
+        "name": "Pavan",
+        "password": "12345",
+        "confirm_password": "123456789",
+        "age": "24",
+        "edu": "M.Tech",
+        "pro": "on",
+        "Description": "hello",
+        "Fileupload": "C:\\fakepath\\Pavan.png"
+    },
+    {
+        "email": "abc@gmail.com",
+        "name": "Helloooo",
+        "password": "12345",
+        "confirm_password": "123456789",
+        "age": "24",
+        "edu": "M.Tech",
+        "pro": "on",
+        "Description": "hello",
+        "Fileupload": "C:\\fakepath\\Pavan.png"
+    }
+]

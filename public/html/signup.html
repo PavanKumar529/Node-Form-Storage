@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>signupPage</title>
+    <link rel="stylesheet" href="/style" />
+    <style>
+      /* * {
+        margin: 0;
+        padding: 0;
+      }
+      body { */
+        /* background: url("sea.png") center/cover no-repeat;         */
+        /* background-color: rgb(199, 221, 205);
+        padding: 0px;
+        height: 100vh;
+        justify-content: center;
+        align-items: center; */
+        /* display: flex; */
+      /* } */
+      #hed {
+        color: rgb(255, 0, 162);
+        text-align: center;
+        padding: 20px;
+      }
+      .body_color{
+        background-color: rgb(199, 221, 205);
+      }
+      #formContainer {
+        padding: 20px;
+      }
+      #btn {
+        margin-top: 20px;
+      }
+      /* #btn {
+        background: blue;
+        width: 200px;
+        font-size: 20px;
+      } */
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- <img src="PCS4.png" alt="logo"> -->
+      <h2 style="margin-left: 10px;">PCS</h2>
+      <!-- <img class="logo" src="data:image/png;base64,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" alt="logo"> -->
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="/signup">
+        <button>Sign Up</button>
+      </a>
+    </header>
+    <!-- <div class="navbar">
+      <div id="logo">
+        <h2>PCS</h2>
+      </div>
+      <nav>
+        <div class="nav-links">
+          <ol class="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ol>
+          <div class="signup">
+            <a href="/signup"><button>SignUp</button></a>
+          </div>
+        </div>
+      </nav>
+    </div> -->
+    <div class="body_color">
+      <h1 id="hed">Pavan Consultancy Service</h1>
+      <marquee scrollamount="10" bgcolor="yellow" direction="right">
+        Today is the last date for applying Intenship
+      </marquee>
+      <div class="content">
+        <!-- <marquee scrollamount="10" bgcolor="yellow" direction="right"
+          >Today is the last<span> pavan</span> <span> pavan</span>
+          <span> pavan </span>date for applying Intenship</marquee> -->
+        
+        <div id="formContainer">
+          <h2>Application form for Intenship</h2>
+          <form id="form">
+            <div class="form1"></div>
+            <p>Name:</p>
+            <input type="text" name="name" placeholder="Enter Your Name" id="un" />
+            <br />
+            <p>Email:</p>
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              name="email"
+              id="email"
+            />
+            <br />
+            <p>Password</p>
+            <input
+              type="password"
+              placeholder="Enter your Password"
+              name="password"
+              id="pass"
+            />
+            <p>Confirm Password</p>
+            <input
+              type="password"
+              placeholder="Enter Confirm your Password"
+              name="confirm_password"
+              id="cpass"
+            />
+            <p>Age:</p>
+            <input type="number" name="age" />
+            <p>Highest Educational Qualifications</p>
+            <input type="radio" id="M.Tech" name="edu" value="M.Tech" />M.Tech<br />
+            <input type="radio" id="B.Tech" name="edu" value="B.Tech" />B.Tech<br />
+            <input type="radio" name="edu" value="M.sc" />M.sc<br />
+            <input type="radio" name="edu" value="B.sc" />B.sc<br />
+            <input type="radio" name="edu" value="MCA" />MCA<br />
+            <input type="radio" name="edu" value="BCA" />BCA<br />
+            <p>Which Programming Languages Should You Know</p>
+            <input type="checkbox" name="pro" value="on" />C<br />
+            <input type="checkbox" name="pro" value="on" />C++<br />
+            <input type="checkbox" name="pro" value="on" />JavaScript<br />
+            <input type="checkbox" name="pro" value="on" />Java<br />
+            <input type="checkbox" name="pro" value="on" />Python<br />
+            <p>How many months you want to participate in our Intenship program?</p>
+            <select name="dropdown">
+              <option value="3 months" name="period">3 months</option>
+              <option value="6 months" name="period" selected>6 months</option>
+              <option value="9 months" name="period">9 months</option>
+              <option value="12 months" name="period">12 months</option>
+            </select>
+            <p>Upload Your Resume</p>
+            <input type="file" name="Fileupload" accept="" />
+            <p>About Yourself</p>
+            <textarea rows="2" cols="20" name="Description"></textarea>
+            <p></p>
+            <a href="signup-successfully.html">
+              <!-- <a href="ApplicationForm1-_Second WebPage.html"> -->
+              <button id="btn">SignUp</button></a
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <h1>Banglore</h1>
+      <h2>Contact: +91 8328533863</h2>
+    </footer>
+
+    <script>
+      let form = document.getElementById("form");
+      //  console.log(form)
+      let userDetails = {};
+      form.addEventListener("input", (event) => {
+        let value = event.target.value;
+        let name = event.target.name;
+        // userDetails.name = value      // Dot Notation : its a static
+        userDetails[name] = value; // square bracket notation: its dynamic
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const { name, email, password, confirm_password, age } = userDetails;
+
+        if (name && email && password && confirm_password && age) {
+          fetch("/newuser", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(userDetails)
+          }).then(data => data.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+        }
+        
+        else {
+          alert("Fill out the Details before submitting");
+        }
+      });
+    </script>
+
+    <!-- <script>
+        let btn=document.getElementById('btn');
+        btn.addEventListener('click',validation)
+        function validation()
+        {
+             let un=document.getElementById('un').value
+             let pass=document.getElementById('pass').value
+            //  let no=document.getElementById('no').value
+            //  no=Number(no)
+            let email = document.getElementById('email').value
+             let c_pass=document.getElementById('cpass').value
+            //  let msg=document.getElementById('msg').value
+            //  let course=document.getElementById('course').value 
+            //  let gender=document.querySelector('input[name="gender"]:checked').value
+            //  let unError=document.getElementById('unError')
+            //  let cPassError=document.getElementById('cPassError');
+            //  let  noError=document.getElementById('noError')
+            //  let msgError=document.getElementById('msgError')
+             let isValidate=false
+            //  if(!un || !pass || !no || !c_pass || !msg || !course || !gender)
+            //  {
+            //    isValidate=false
+            //     unError.innerText="required*"
+            //     cPassError.innerText="required*"
+            //     noError.innerText="required*"
+            //     msgError.innerText="required*"
+            //  }
+            //  else if (!(un.length>5))
+            //  {
+            //         unError.innerText="user name >5 *"
+            //         cPassError.innerText=""
+            //     noError.innerText=""
+            //     msgError.innerText=""
+            //         isValidate=false
+            //  }
+            //  else if (!(pass==c_pass))
+            //  {
+            //     unError.innerText=""
+            //     cPassError.innerText=" pass and confirm pass must be same"
+            //     noError.innerText=""
+            //     msgError.innerText=""
+            //    isValidate=false
+            //  }
+            //  else if (!(typeof no ==="number"))
+            //  {
+              
+            //     unError.innerText=""
+            //     cPassError.innerText=""
+            //     noError.innerText="type must be no"
+            //     msgError.innerText=""
+            //    isValidate=false
+            //  }
+            //  else if (!(no.toString().length===10))
+            //  {
+                
+            //     unError.innerText=""
+            //     cPassError.innerText=""
+            //     noError.innerText="must be 10 digit"
+            //     msgError.innerText=""
+            //    isValidate=false
+            //  }
+            //  else if (!(no.toString()[0]==='9'))
+            //  {
+            //     unError.innerText=""
+            //     cPassError.innerText=""
+            //     noError.innerText="Always start with 9"
+            //     msgError.innerText=""
+            //    isValidate=false
+            //  }
+            //  else if (!(msg.length>10))
+            //  {
+            //     unError.innerText=""
+            //     cPassError.innerText=""
+            //     noError.innerText=""
+            //     msgError.innerText=" msg must be >10"
+            //    isValidate=false
+            //  }
+            //  else{
+            //     unError.innerText=""
+            //         cPassError.innerText=""
+            //     noError.innerText=""
+            //     msgError.innerText=""
+                
+            //     isValidate=true
+            //  }
+             if(isValidate)
+             {
+                // alert (`your name is ${un} pass is ${pass} `)
+                console.log(`your name is ${un} pass is ${pass} `)
+             }
+              
+        }
+    </script> -->
+  </body>
+</html>

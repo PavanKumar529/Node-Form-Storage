@@ -1,0 +1,168 @@
+<!-- form validation -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+        .danger
+        {
+            color:red;
+        }
+    </style>
+  </head>
+  <body>
+ <h1>Form Validation with Error Messages</h1>
+    <form id="registrationForm">
+        <label for="un">Username:</label>
+        <input type="text" placeholder="Enter username" id="un" name="username">
+        <div id="unError" class="danger"></div>
+        <br>
+        <label for="pass">Password:</label>
+        <input type="password" placeholder="Enter password" id="pass" name="password">
+        <br>
+        <label for="cpass">Confirm Password:</label>
+        <input type="password" placeholder="Confirm password" id="cpass">
+        <div id="cPassError" class="danger"></div>
+        <br>
+        <label for="no">Mobile:</label>
+        <input type="text" placeholder="Enter mobile no" id="no" name="mobile">
+        <div id="noError" class="danger"></div>
+        <br>
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="M" checked> Male
+        <input type="radio" name="gender" value="F"> Female
+        <input type="radio" name="gender" value="O"> Other
+        <br>
+        <label for="course">Course:</label>
+        <select id="course" name="course">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+        </select>
+        <br>
+        <label for="msg">Message:</label>
+        <textarea cols="30" rows="7" placeholder="Enter your message" id="msg" name="message"></textarea>
+        <div id="msgError" class="danger"></div>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        let btn=document.getElementById('btn');
+        btn.addEventListener('click',validation)
+        function validation()
+        {
+             let un=document.getElementById('un').value
+             let pass=document.getElementById('pass').value
+             let no=document.getElementById('no').value
+             no=Number(no)
+             let c_pass=document.getElementById('cpass').value
+             let msg=document.getElementById('msg').value
+             let course=document.getElementById('course').value 
+             let gender=document.querySelector('input[name="gender"]:checked').value
+             let unError=document.getElementById('unError')
+             let cPassError=document.getElementById('cPassError');
+             let  noError=document.getElementById('noError')
+             let msgError=document.getElementById('msgError')
+             let isValidate=false
+             if(!un || !pass || !no || !c_pass || !msg || !course || !gender)
+             {
+               isValidate=false
+                unError.innerText="required*"
+                cPassError.innerText="required*"
+                noError.innerText="required*"
+                msgError.innerText="required*"
+             }
+             else if (!(un.length>5))
+             {
+                    unError.innerText="user name >5 *"
+                    cPassError.innerText=""
+                noError.innerText=""
+                msgError.innerText=""
+                    isValidate=false
+             }
+             else if (!(pass==c_pass))
+             {
+                unError.innerText=""
+                cPassError.innerText=" pass and confirm pass must be same"
+                noError.innerText=""
+                msgError.innerText=""
+               isValidate=false
+             }
+             else if (!(typeof no ==="number"))
+             {
+              
+                unError.innerText=""
+                cPassError.innerText=""
+                noError.innerText="type must be no"
+                msgError.innerText=""
+               isValidate=false
+             }
+             else if (!(no.toString().length===10))
+             {
+                
+                unError.innerText=""
+                cPassError.innerText=""
+                noError.innerText="must be 10 digit"
+                msgError.innerText=""
+               isValidate=false
+             }
+             else if (!(no.toString()[0]==='9'))
+             {
+                unError.innerText=""
+                cPassError.innerText=""
+                noError.innerText="Always start with 9"
+                msgError.innerText=""
+               isValidate=false
+             }
+             else if (!(msg.length>10))
+             {
+                unError.innerText=""
+                cPassError.innerText=""
+                noError.innerText=""
+                msgError.innerText=" msg must be >10"
+               isValidate=false
+             }
+             else{
+                unError.innerText=""
+                    cPassError.innerText=""
+                noError.innerText=""
+                msgError.innerText=""
+                
+                isValidate=true
+             }
+             if(isValidate)
+             {
+                // alert (`your name is ${un} pass is ${pass} `)
+                console.log(`your name is ${un} pass is ${pass} `)
+             }
+              
+        }
+
+//         document.addEventListener('DOMContentLoaded', function () {
+//     let registrationForm = document.getElementById('registrationForm');
+//     registrationForm.addEventListener('submit', function (event) {
+//         event.preventDefault();
+//         let formData = new FormData(registrationForm);
+//         let formObject = {};
+//         formData.forEach(function (value, key) {
+//             formObject[key] = value;
+//         });
+//         let formJSON = JSON.stringify(formObject);
+//         fetch('http://127.0.0.5:2000/signup', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: formJSON
+//         })
+//         .then(response => response.json())
+//         .then(data => console.log(data))
+//         .catch(error => console.error('Error:', error));
+//     });
+// });
+
+    </script>
+  </body>
+</html>
